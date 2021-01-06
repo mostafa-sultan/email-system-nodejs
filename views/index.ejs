@@ -1,0 +1,82 @@
+<!-- <div class="container">
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#form">
+      See Modal with Form
+    </button>  
+  </div> -->
+  <!-- pop -->
+  <%- include('components/modalform/popform'); %>
+
+<!--  -->
+<div class="container">
+<div class="content-wrapper">
+    <!-- Content Place Here -->
+    <div class="email-app card-margin">
+        <div class="email-toolbars-wrapper">
+            <div class="toolbar-header">
+                <button type="button" class="btn btn-lg btn-block btn-compose-mail">
+                 
+                    project Mail
+                </button>
+            </div>
+            <div class="toolbar-body">
+                <div class="toolbar-title">Folders</div>
+                <ul class="toolbar-menu">
+                 <%- include('components/list'); %>
+
+                        </ul>
+                    </div>
+                </div>
+                <ul class="contact-list">
+                
+                    
+                    <% if (userss) { %>
+                        <% userss.forEach(function(usera){ %>
+                            <%- include('components/users',{usera: usera}); %>
+                        <% }); %>                      
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+<!-- ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+<div class="email-list-wrapper">
+  <div class="email-list-header">
+      <div class="dropdown">
+          <button class="btn btn-sm btn-flash-border-base shadow-none dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recent
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item"><a class="dropdown-link" href="#">Focused</a></li>
+              <li class="dropdown-item"><a class="dropdown-link" href="#">Others</a></li>
+          </ul>
+      </div>
+  </div> 
+   
+  <div id="email-app-body" class="email-list-scroll-container ps ps--active-y">
+    <ul class="email-list">
+        <% if (emails) { %>
+            <% emails.forEach(function(email){ %>
+                <%- include('components/recentmail',{email: email}); %>
+                <% }); %>
+                             
+        <% } %>
+
+</ul>
+<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+<div class="ps__rail-y" style="top: 0px; height: 911px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 772px;"></div></div>
+</div>
+  <!-- kk -->
+</div>
+
+        <!-- ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+        <div class="email-desc-wrapper">
+ 
+                <% if (idemail) { %>
+                    
+          <%- include('components/email',{idemail:idemail}); %> 
+                                     
+                <% } %>
+        </div>
+    </div>
+</div>
+</div>
+
